@@ -1,0 +1,13 @@
+# API & LLM SDK
+google-genai>=0.1.1
+python-dotenv>=1.0.0
+
+# Document Processing (Tuần 1)
+pypdf>=4.0.0
+
+# Vector Store & Search (Tuần 1)
+chromadb>=0.5.0
+numpy>=1.24.0
+
+# Web UI (Tuần 2)
+streamlit>=1.35.0

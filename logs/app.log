@@ -1,0 +1,47 @@
+[2026-09-19 23:47:03] [INFO] [<string>:1] - Test logger
+[2026-09-19 23:49:24] [INFO] [test_document_service.py:17] - === BÀI TEST 1: KIỂM THỬ THUẬT TOÁN CLEAN_TEXT ===
+[2026-09-19 23:49:24] [INFO] [test_document_service.py:35] - ✅ Bài test clean_text đạt kết quả xuất sắc 100%!
+[2026-09-19 23:49:24] [INFO] [test_document_service.py:36] - Kết quả sau làm sạch:
+---
+In English grammar, the present perfect tense is fundamental for describing past experiences.
+
+This sentence has weird spaces.
+---
+[2026-09-19 23:49:24] [INFO] [test_document_service.py:41] - === BÀI TEST 2: KIỂM THỬ ĐỌC VÀ CHUẨN HÓA SÁCH PDF THẬT ===
+[2026-09-19 23:49:24] [INFO] [document_service.py:82] - Bắt đầu trích xuất PDF: Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-19 23:49:24] [INFO] [document_service.py:87] - Tổng số trang phát hiện được: 126 trang
+[2026-09-19 23:49:42] [INFO] [document_service.py:111] - Hoàn thành trích xuất [Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf]: Thu được 126 trang hợp lệ.
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:55] - ✅ Đọc thành công file: Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:56] - Tổng số trang hợp lệ trích xuất được: 126 trang
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:61] - --- TRANG 1 ---
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:62] - Tên nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:63] - Số ký tự (char_count): 5550
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:65] - Đoạn trích 200 ký tự đầu: "English Grammar Review! Copyright Hp Group ( www.hp-vietnam.com)    Trang 1  Please visit our website for more English study materials, including level A, B, C, TOEFL and IELTS  Ngữ pháp tiếng Anh  Mụ..."
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:61] - --- TRANG 2 ---
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:62] - Tên nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:63] - Số ký tự (char_count): 6206
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:65] - Đoạn trích 200 ký tự đầu: "English Grammar Review! Copyright Hp Group ( www.hp-vietnam.com)    Trang 2  Please visit our website for more English study materials, including level A, B, C, TOEFL and IELTS  4.5 V-ing làm chủ ngữ ..."
+[2026-09-19 23:49:42] [INFO] [test_document_service.py:67] - ✅ Toàn bộ bài test Ngày 2 hoàn tất thành công!
+[2026-09-20 00:12:23] [INFO] [test_document_service.py:17] - === BÀI TEST 1: KIỂM THỬ THUẬT TOÁN CLEAN_TEXT ===
+[2026-09-20 00:12:23] [INFO] [test_document_service.py:35] - ✅ Bài test clean_text đạt kết quả xuất sắc 100%!
+[2026-09-20 00:12:23] [INFO] [test_document_service.py:36] - Kết quả sau làm sạch:
+---
+In English grammar, the present perfect tense is fundamental for describing past experiences.
+
+This sentence has weird spaces.
+---
+[2026-09-20 00:12:23] [INFO] [test_document_service.py:41] - === BÀI TEST 2: KIỂM THỬ ĐỌC VÀ CHUẨN HÓA SÁCH PDF THẬT ===
+[2026-09-20 00:12:23] [INFO] [document_service.py:82] - Bắt đầu trích xuất PDF: Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-20 00:12:23] [INFO] [document_service.py:87] - Tổng số trang phát hiện được: 126 trang
+[2026-09-20 00:12:38] [INFO] [document_service.py:111] - Hoàn thành trích xuất [Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf]: Thu được 126 trang hợp lệ.
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:55] - ✅ Đọc thành công file: Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:56] - Tổng số trang hợp lệ trích xuất được: 126 trang
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:61] - --- TRANG 1 ---
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:62] - Tên nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:63] - Số ký tự (char_count): 5550
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:65] - Đoạn trích 200 ký tự đầu: "English Grammar Review! Copyright Hp Group ( www.hp-vietnam.com)    Trang 1  Please visit our website for more English study materials, including level A, B, C, TOEFL and IELTS  Ngữ pháp tiếng Anh  Mụ..."
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:61] - --- TRANG 2 ---
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:62] - Tên nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:63] - Số ký tự (char_count): 6206
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:65] - Đoạn trích 200 ký tự đầu: "English Grammar Review! Copyright Hp Group ( www.hp-vietnam.com)    Trang 2  Please visit our website for more English study materials, including level A, B, C, TOEFL and IELTS  4.5 V-ing làm chủ ngữ ..."
+[2026-09-20 00:12:38] [INFO] [test_document_service.py:67] - ✅ Toàn bộ bài test Ngày 2 hoàn tất thành công!

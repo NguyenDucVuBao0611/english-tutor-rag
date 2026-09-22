@@ -83,3 +83,119 @@ t have results in the present.... Examples:
 [2026-09-20 23:27:15] [INFO] [test_chunker_service.py:74] - Độ dài: 450 ký tự
 [2026-09-20 23:27:15] [INFO] [test_chunker_service.py:76] - Đoạn trích: ".................................................8... 1.4 Modifier (trạng từ):..........................................................................."
 [2026-09-20 23:27:15] [INFO] [test_chunker_service.py:78] - ✅ Toàn bộ bài test Ngày 3 hoàn tất thành công!
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:18] - === BÀI TEST 1: KIỂM THỬ THUẬT TOÁN RECURSIVE CHUNKER ===
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:34] - Đoạn văn gốc dài: 369 ký tự
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:35] - Số chunk được chia ra: 3 chunks
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:40] - --- Chunk 1 (85 ký tự) ---
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:41] - Nội dung:
+1. THE PRESENT PERFECT TENSE.
+
+Formula: Subject + have/has + Past Participle (V3/ed).
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:40] - --- Chunk 2 (181 ký tự) ---
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:41] - Nội dung:
++ Past Participle (V3/ed).
+Usage: We use the present perfect tense to talk about experiences in life up to now, or actions that happened in the past but have results in the present.
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:40] - --- Chunk 3 (155 ký tự) ---
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:41] - Nội dung:
+have results in the present.
+Examples:
+- I have lived in Hanoi for five years.
+- She has already finished her homework.
+- They haven't seen that movie yet.
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:43] - ✅ Bài test 1: Thuật toán Recursive Chunker hoạt động chính xác 100%!
+[2026-09-21 01:30:25] [INFO] [test_chunker_service.py:48] - === BÀI TEST 2: KẾT NỐI LUỒNG THỰC TẾ TRÊN SÁCH PDF ===
+[2026-09-21 01:30:25] [INFO] [document_service.py:82] - Bắt đầu trích xuất PDF: Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 01:30:25] [INFO] [document_service.py:87] - Tổng số trang phát hiện được: 126 trang
+[2026-09-21 01:30:38] [INFO] [document_service.py:111] - Hoàn thành trích xuất [Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf]: Thu được 126 trang hợp lệ.
+[2026-09-21 01:30:38] [INFO] [chunker_service.py:176] - Bắt đầu phân đoạn 2 trang tài liệu...
+[2026-09-21 01:30:38] [INFO] [chunker_service.py:196] - Hoàn thành phân đoạn: Tạo ra tổng cộng 29 chunks.
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:66] - Từ 2 trang sách ban đầu -> Đã tạo ra 29 chunks.
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:72] - --- CHUNK 0 (Trang 1) ---
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:73] - Nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:74] - Độ dài: 486 ký tự
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:76] - Đoạn trích: "English Grammar Review! Copyright Hp Group ( www.hp-vietnam.com)    Trang 1  Please visit our website for more English study materials, including leve..."
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:72] - --- CHUNK 1 (Trang 1) ---
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:73] - Nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:74] - Độ dài: 481 ký tự
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:76] - Đoạn trích: ".................................................7 1.1 Subject (chủ ngữ):................................................................................"
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:72] - --- CHUNK 2 (Trang 1) ---
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:73] - Nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:74] - Độ dài: 447 ký tự
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:76] - Đoạn trích: ".................................................8 1.4 Modifier (trạng từ):.............................................................................."
+[2026-09-21 01:30:38] [INFO] [test_chunker_service.py:78] - ✅ Toàn bộ bài test Ngày 3 hoàn tất thành công!
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:67] - === BÀI TEST 1: CHỨNG MINH TÍNH CHẤT TOÁN HỌC CỦA COSINE SIMILARITY ===
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:74] - 1. Cùng hướng (θ = 0°): Cosine = 1.0000 (Kỳ vọng: 1.0000)
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:80] - 2. Vuông góc (θ = 90°): Cosine = 0.0000 (Kỳ vọng: 0.0000)
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:86] - 3. Ngược hướng (θ = 180°): Cosine = -1.0000 (Kỳ vọng: -1.0000)
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:89] - ✅ Bài test 1: Các định luật toán học hoạt động chuẩn xác 100%!
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:94] - === BÀI TEST 2: THỰC CHIẾN TÌM KIẾM NGỮ NGHĨA BẰNG NUMPY ===
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:107] - Câu hỏi của học viên: 'How do I use have and has with V3 to talk about life experience?'
+[2026-09-21 10:11:28] [INFO] [test_similarity.py:108] - Đang vector hóa câu hỏi và 4 tài liệu qua Gemini Embedding...
+[2026-09-21 10:11:28] [INFO] [embedding_service.py:32] - Khởi tạo thành công Gemini Client Singleton cho EmbeddingService.
+[2026-09-21 10:11:29] [INFO] [embedding_service.py:74] - Bắt đầu tạo embedding cho lô 4 văn bản...
+[2026-09-21 10:11:30] [INFO] [embedding_service.py:81] - Hoàn thành tạo embedding cho 4 văn bản.
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:116] - Số chiều của Vector: 3072 chiều
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:124] - --- BẢNG XẾP HẠNG KẾT QUẢ TÌM KIẾM (TOP-K) ---
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:128] - Top 1 [Điểm: 0.7467]: "The present perfect tense is formed with have/has + past participle (V3). It con..."
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:128] - Top 2 [Điểm: 0.6029]: "The past continuous tense uses was/were + V-ing to describe actions happening at..."
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:128] - Top 3 [Điểm: 0.5516]: "Future simple with 'will' is used for promises, offers, and decisions made at th..."
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:128] - Top 4 [Điểm: 0.4768]: "Photosynthesis is the biological process used by green plants to convert light e..."
+[2026-09-21 10:11:30] [INFO] [test_similarity.py:133] - ✅ Bài test 2: NumPy đã xếp hạng chính xác đoạn văn ngữ pháp liên quan nhất lên Top 1!
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:18] - === BÀI TEST 1: KIỂM THỬ THUẬT TOÁN RECURSIVE CHUNKER ===
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:34] - Đoạn văn gốc dài: 369 ký tự
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:35] - Số chunk được chia ra: 3 chunks
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:40] - --- Chunk 1 (85 ký tự) ---
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:41] - Nội dung:
+1. THE PRESENT PERFECT TENSE.
+
+Formula: Subject + have/has + Past Participle (V3/ed).
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:40] - --- Chunk 2 (181 ký tự) ---
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:41] - Nội dung:
++ Past Participle (V3/ed).
+Usage: We use the present perfect tense to talk about experiences in life up to now, or actions that happened in the past but have results in the present.
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:40] - --- Chunk 3 (155 ký tự) ---
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:41] - Nội dung:
+have results in the present.
+Examples:
+- I have lived in Hanoi for five years.
+- She has already finished her homework.
+- They haven't seen that movie yet.
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:43] - ✅ Bài test 1: Thuật toán Recursive Chunker hoạt động chính xác 100%!
+[2026-09-21 10:12:02] [INFO] [test_chunker_service.py:48] - === BÀI TEST 2: KẾT NỐI LUỒNG THỰC TẾ TRÊN SÁCH PDF ===
+[2026-09-21 10:12:02] [INFO] [document_service.py:82] - Bắt đầu trích xuất PDF: Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 10:12:02] [INFO] [document_service.py:87] - Tổng số trang phát hiện được: 126 trang
+[2026-09-21 10:12:15] [INFO] [document_service.py:111] - Hoàn thành trích xuất [Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf]: Thu được 126 trang hợp lệ.
+[2026-09-21 10:12:15] [INFO] [chunker_service.py:176] - Bắt đầu phân đoạn 2 trang tài liệu...
+[2026-09-21 10:12:15] [INFO] [chunker_service.py:196] - Hoàn thành phân đoạn: Tạo ra tổng cộng 29 chunks.
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:66] - Từ 2 trang sách ban đầu -> Đã tạo ra 29 chunks.
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:72] - --- CHUNK 0 (Trang 1) ---
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:73] - Nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:74] - Độ dài: 486 ký tự
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:76] - Đoạn trích: "English Grammar Review! Copyright Hp Group ( www.hp-vietnam.com)    Trang 1  Please visit our website for more English study materials, including leve..."
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:72] - --- CHUNK 1 (Trang 1) ---
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:73] - Nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:74] - Độ dài: 481 ký tự
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:76] - Đoạn trích: ".................................................7 1.1 Subject (chủ ngữ):................................................................................"
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:72] - --- CHUNK 2 (Trang 1) ---
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:73] - Nguồn (source): Ngữ pháp tiếng Anh cơ bản - IELTS Fighter.pdf
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:74] - Độ dài: 447 ký tự
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:76] - Đoạn trích: ".................................................8 1.4 Modifier (trạng từ):.............................................................................."
+[2026-09-21 10:12:15] [INFO] [test_chunker_service.py:78] - ✅ Toàn bộ bài test Ngày 3 hoàn tất thành công!
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:67] - === BÀI TEST 1: CHỨNG MINH TÍNH CHẤT TOÁN HỌC CỦA COSINE SIMILARITY ===
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:74] - 1. Cùng hướng (θ = 0°): Cosine = 1.0000 (Kỳ vọng: 1.0000)
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:80] - 2. Vuông góc (θ = 90°): Cosine = 0.0000 (Kỳ vọng: 0.0000)
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:86] - 3. Ngược hướng (θ = 180°): Cosine = -1.0000 (Kỳ vọng: -1.0000)
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:89] - ✅ Bài test 1: Các định luật toán học hoạt động chuẩn xác 100%!
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:94] - === BÀI TEST 2: THỰC CHIẾN TÌM KIẾM NGỮ NGHĨA BẰNG NUMPY ===
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:107] - Câu hỏi của học viên: 'How do I use have and has with V3 to talk about life experience?'
+[2026-09-21 10:12:44] [INFO] [test_similarity.py:108] - Đang vector hóa câu hỏi và 4 tài liệu qua Gemini Embedding...
+[2026-09-21 10:12:44] [INFO] [embedding_service.py:32] - Khởi tạo thành công Gemini Client Singleton cho EmbeddingService.
+[2026-09-21 10:12:44] [INFO] [embedding_service.py:74] - Bắt đầu tạo embedding cho lô 4 văn bản...
+[2026-09-21 10:12:46] [INFO] [embedding_service.py:81] - Hoàn thành tạo embedding cho 4 văn bản.
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:116] - Số chiều của Vector: 3072 chiều
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:124] - --- BẢNG XẾP HẠNG KẾT QUẢ TÌM KIẾM (TOP-K) ---
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:128] - Top 1 [Điểm: 0.7467]: "The present perfect tense is formed with have/has + past participle (V3). It con..."
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:128] - Top 2 [Điểm: 0.6029]: "The past continuous tense uses was/were + V-ing to describe actions happening at..."
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:128] - Top 3 [Điểm: 0.5516]: "Future simple with 'will' is used for promises, offers, and decisions made at th..."
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:128] - Top 4 [Điểm: 0.4768]: "Photosynthesis is the biological process used by green plants to convert light e..."
+[2026-09-21 10:12:46] [INFO] [test_similarity.py:133] - ✅ Bài test 2: NumPy đã xếp hạng chính xác đoạn văn ngữ pháp liên quan nhất lên Top 1!

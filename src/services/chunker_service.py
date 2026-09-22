@@ -109,7 +109,13 @@ class RecursiveCharacterChunker(BaseChunker):
         return [c for c in chunks if c]
 
     def _add_overlap(self, chunks: List[str]) -> List[str]:
-        """Tạo sự gối đầu (overlap) giữa các chunk liền kề để tránh mất mạch ý."""
+        """Tạo sự gối đầu (overlap) chuẩn xác giữa các chunk liền kề.
+
+        Nguyên tắc Enterprise:
+        1. Tuyệt đối không chém rách từ vựng: lùi lại đến khoảng trắng gần nhất để lấy trọn vẹn từ.
+        2. Không dùng dấu ba chấm ('...') gây nhiễu ngữ nghĩa cho mô hình Embedding và LLM.
+        3. Nối bằng dấu xuống dòng ('\\n') giữ mạch văn tự nhiên.
+        """
         if len(chunks) <= 1 or self.chunk_overlap == 0:
             return chunks
 
@@ -119,9 +125,19 @@ class RecursiveCharacterChunker(BaseChunker):
             prev_chunk = chunks[i - 1]
             curr_chunk = chunks[i]
 
-            # Lấy phần đuôi của chunk trước làm đầu cho chunk hiện tại
-            overlap_prefix = prev_chunk[-self.chunk_overlap :] if len(prev_chunk) >= self.chunk_overlap else prev_chunk
-            combined = f"{overlap_prefix}... {curr_chunk}"
+            if len(prev_chunk) >= self.chunk_overlap:
+                raw_overlap = prev_chunk[-self.chunk_overlap :]
+                # Tìm dấu cách đầu tiên để bỏ phần từ bị cắt cụt ở đầu
+                first_space = raw_overlap.find(" ")
+                if first_space != -1 and first_space < len(raw_overlap) - 1:
+                    clean_overlap = raw_overlap[first_space + 1 :]
+                else:
+                    clean_overlap = raw_overlap
+            else:
+                clean_overlap = prev_chunk
+
+            # Nối tự nhiên, không rách từ, không dùng dấu '...'
+            combined = f"{clean_overlap.strip()}\n{curr_chunk.strip()}"
             overlapped_chunks.append(combined)
 
         return overlapped_chunks

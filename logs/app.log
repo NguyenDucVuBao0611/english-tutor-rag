@@ -199,3 +199,60 @@ Examples:
 [2026-09-21 10:12:46] [INFO] [test_similarity.py:128] - Top 3 [Điểm: 0.5516]: "Future simple with 'will' is used for promises, offers, and decisions made at th..."
 [2026-09-21 10:12:46] [INFO] [test_similarity.py:128] - Top 4 [Điểm: 0.4768]: "Photosynthesis is the biological process used by green plants to convert light e..."
 [2026-09-21 10:12:46] [INFO] [test_similarity.py:133] - ✅ Bài test 2: NumPy đã xếp hạng chính xác đoạn văn ngữ pháp liên quan nhất lên Top 1!
+[2026-09-25 23:37:44] [INFO] [test_chroma_store.py:24] - =====================================================================
+[2026-09-25 23:37:44] [INFO] [test_chroma_store.py:25] - 🚀 BẮT ĐẦU KIỂM THỬ TOÀN DIỆN CHROMADB VECTOR STORE (NGÀY 5)
+[2026-09-25 23:37:44] [INFO] [test_chroma_store.py:26] - =====================================================================
+[2026-09-25 23:37:44] [INFO] [test_chroma_store.py:52] - 
+--- BÀI TEST 1: KHỞI TẠO VÀ THÊM DỮ LIỆU VÀO CHROMADB ---
+[2026-09-25 23:37:44] [INFO] [embedding_service.py:32] - Khởi tạo thành công Gemini Client Singleton cho EmbeddingService.
+[2026-09-25 23:37:44] [INFO] [chroma_store.py:42] - Đang kết nối ChromaDB PersistentClient tại đường dẫn: 'C:\Users\Nguyen Duc Vu Bao\Desktop\RAG\test_chroma_db'...
+[2026-09-25 23:37:44] [INFO] [chroma_store.py:55] - Khởi tạo thành công Collection 'test_english_tutor' (Hiện có: 0 bản ghi).
+[2026-09-25 23:37:44] [WARNING] [chroma_store.py:177] - Đang xóa toàn bộ dữ liệu trong Collection 'test_english_tutor'...
+[2026-09-25 23:37:44] [INFO] [chroma_store.py:184] - Đã reset thành công Collection 'test_english_tutor'.
+[2026-09-25 23:37:44] [INFO] [chroma_store.py:87] - Đang tạo vector embedding cho 5 chunks...
+[2026-09-25 23:37:44] [INFO] [embedding_service.py:74] - Bắt đầu tạo embedding cho lô 5 văn bản...
+[2026-09-25 23:37:47] [INFO] [embedding_service.py:81] - Hoàn thành tạo embedding cho 5 văn bản.
+[2026-09-25 23:37:47] [INFO] [chroma_store.py:90] - Đang lưu 5 bản ghi vào Collection 'test_english_tutor'...
+[2026-09-25 23:37:47] [INFO] [chroma_store.py:98] - Đã lưu thành công 5 chunks vào ChromaDB.
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:69] - Đã thêm các ID: ['grammar_chunk_1', 'grammar_chunk_2', 'grammar_chunk_3', 'grammar_chunk_4', 'grammar_chunk_5']
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:70] - Tổng số bản ghi trong ChromaDB hiện tại: 5
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:72] - ✅ Bài test 1: Ingestion và Count thành công 100%!
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:77] - 
+--- BÀI TEST 2: TRUY VẤN NGỮ NGHĨA TOP-K BẰNG CÂU HỎI TỰ NHIÊN ---
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:79] - Câu hỏi của học viên: 'How to talk about things I have experienced in my life?'
+[2026-09-25 23:37:47] [INFO] [chroma_store.py:124] - Đang tạo vector cho câu hỏi truy vấn: 'How to talk about things I have experienced in my life?...'
+[2026-09-25 23:37:47] [INFO] [chroma_store.py:127] - Đang tìm kiếm Top-2 trong ChromaDB (Lọc điều kiện: None)...
+[2026-09-25 23:37:47] [INFO] [chroma_store.py:160] - Tìm thấy 2 kết quả tương đồng phù hợp.
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:83] - Tìm thấy 2 kết quả liên quan nhất:
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:85] -   Top 1 | Điểm tương đồng: 0.6337 (Distance: 0.3663)
+        Nguồn: [English Grammar in Use - Trang 14]
+        Nội dung: "The present perfect tense is formed with have/has + past participle (V3). It is ..."
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:85] -   Top 2 | Điểm tương đồng: 0.5558 (Distance: 0.4442)
+        Nguồn: [Oxford Practice Grammar - Trang 30]
+        Nội dung: "Use 'since' with a specific point in time (e.g., since 2010), and 'for' with a d..."
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:93] - ✅ Bài test 2: Semantic Search xếp hạng chính xác 100%!
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:98] - 
+--- BÀI TEST 3: TÌM KIẾM KẾT HỢP BỘ LỌC METADATA ---
+[2026-09-25 23:37:47] [INFO] [test_chroma_store.py:102] - Câu hỏi: 'How to use past participle V3?' với điều kiện: {'book_title': 'Oxford Practice Grammar'}
+[2026-09-25 23:37:47] [INFO] [chroma_store.py:124] - Đang tạo vector cho câu hỏi truy vấn: 'How to use past participle V3?...'
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:127] - Đang tìm kiếm Top-2 trong ChromaDB (Lọc điều kiện: {'book_title': 'Oxford Practice Grammar'})...
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:160] - Tìm thấy 2 kết quả tương đồng phù hợp.
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:109] - Tìm thấy 2 kết quả phù hợp bộ lọc:
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:111] -   Top 1 | Sách: Oxford Practice Grammar | Điểm: 0.7698
+        Nội dung: "Passive voice is formed with 'be' + past participle (V3). It emphasizes the acti..."
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:111] -   Top 2 | Sách: Oxford Practice Grammar | Điểm: 0.5797
+        Nội dung: "Use 'since' with a specific point in time (e.g., since 2010), and 'for' with a d..."
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:119] - ✅ Bài test 3: Metadata Filtering hoạt động chính xác tuyệt đối!
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:124] - 
+--- BÀI TEST 4: KIỂM CHỨNG LƯU TRỮ BỀN VỮNG XUỐNG Ổ CỨNG ---
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:126] - Giả lập tắt ứng dụng và khởi động lại Client mới kết nối vào thư mục...
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:42] - Đang kết nối ChromaDB PersistentClient tại đường dẫn: 'C:\Users\Nguyen Duc Vu Bao\Desktop\RAG\test_chroma_db'...
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:55] - Khởi tạo thành công Collection 'test_english_tutor' (Hiện có: 5 bản ghi).
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:133] - Số lượng bản ghi tự động nạp từ ổ cứng: 5
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:124] - Đang tạo vector cho câu hỏi truy vấn: 'duration of time...'
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:127] - Đang tìm kiếm Top-1 trong ChromaDB (Lọc điều kiện: None)...
+[2026-09-25 23:37:48] [INFO] [chroma_store.py:160] - Tìm thấy 1 kết quả tương đồng phù hợp.
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:140] - Kết quả truy vấn tức thì từ đĩa: "Use 'since' with a specific point in time (e.g., since 2010)..."
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:144] - ✅ Bài test 4: Tính bền vững (Persistence) hoạt động hoàn hảo!
+[2026-09-25 23:37:48] [INFO] [test_chroma_store.py:148] - 
+🎉 TOÀN BỘ 4 BÀI TEST ĐÃ VƯỢT QUA XUẤT SẮC!

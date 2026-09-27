@@ -123,6 +123,49 @@ def ask(self, question: str, top_k: int = 3, where: Optional[Dict] = None) -> Di
     return {"question": question, "answer": answer, "sources": sources, "raw_chunks": chunks}
 ```
 
+### 3.3. Góc Code Review & Bắt Lỗi: Những Câu Hỏi Đào Sâu Cốt Lõi
+
+Dưới đây là bản tổng hợp các thắc mắc kiến trúc cốt lõi đã được mổ xẻ trong buổi học:
+
+#### 1. LLM và RAG khác nhau thế nào? (Thi Đóng Sách vs Thi Mở Sách)
+
+| Tiêu chí | 🧠 LLM Thuần Túy (Gemini / GPT) | 🏛️ Hệ Thống RAG (RAG Engine) |
+| :--- | :--- | :--- |
+| **Hình tượng** | **Thi Đóng Sách**: Chỉ nhớ những gì đã học từ quá khứ trên internet. | **Thi Mở Sách**: Được phát cuốn giáo trình chuẩn đặt ngay trước mặt để tra cứu. |
+| **Nguồn kiến thức** | Dữ liệu cũ, chung chung trên internet (Knowledge Cutoff). | Toàn bộ **giáo trình tiếng Anh riêng biệt** của bạn. |
+| **Nguy cơ Ảo giác** | **Rất cao**: Dễ "chém gió" bịa ra quy tắc ngữ pháp không có thật. | **Triệt tiêu 100%**: Nhờ Grounded Prompt ép chỉ trả lời từ sách. |
+| **Trích dẫn nguồn** | ❌ Không thể chỉ ra nằm ở sách nào, trang bao nhiêu. | ✅ **Chuẩn xác**: Luôn kèm `[Nguồn: Sách X - Trang Y]`. |
+| **Cập nhật bài mới** | Bất khả thi (Tốn hàng triệu USD để train lại model). | Cực dễ: Ném thêm PDF vào ChromaDB sau 10 giây là xong. |
+
+---
+
+#### 2. Tại sao bắt buộc phải có CẢ HAI (Vector Store và LLM) trong `RAGService`?
+
+```python
+self.vector_store = vector_store or ChromaVectorStore() # Thành phần 1: Kho sách
+self.llm_service = llm_service or LLMService()          # Thành phần 2: Gia sư
+```
+
+* **Nếu chỉ dùng LLM**: Giống như thuê một thầy giáo thông minh nhưng bị bịt mắt, không cho đọc giáo trình $\rightarrow$ Thầy giảng rất hay nhưng hay nói sai, bịa đặt kiến thức.
+* **Nếu chỉ có Vector Store (bỏ LLM đi)**: Hệ thống chỉ là công cụ tìm kiếm thô (Ctrl + F) $\rightarrow$ Ném ra 3 đoạn văn tiếng Anh thô ráp mà không có ai dịch nghĩa, không có ai giảng giải ngữ pháp cho học viên hiểu.
+* 👉 **Bắt buộc phải có cả 2**: Vector Store tìm đúng trang sách, còn LLM đóng vai trò bộ não đọc hiểu và giảng giải sư phạm.
+
+---
+
+#### 3. Công thức Vàng của RAG trong Ngành AI
+
+$$\mathbf{RAG = Vector\;(ChromaDB) + LLM\;(Gemini)}$$
+
+* **Vector (Ngày 1 $\rightarrow$ 5)**: Đảm nhận chữ **R** (Retrieval - Đôi mắt tìm kiếm tri thức).
+* **LLM (Ngày 6)**: Đảm nhận chữ **G** (Generation - Bộ não và cái miệng giảng giải).
+* Ghép cả hai lại $\rightarrow$ Ra đời **RAG** hoàn chỉnh!
+
+---
+
+#### 4. Tại sao tách làm 2 hàm: `retrieve_context()` và `ask()`?
+* **Hàm `ask()`**: Dành cho người dùng thông thường $\rightarrow$ Hỏi 1 câu nhận về câu trả lời trọn gói từ A đến Z.
+* **Hàm `retrieve_context()`**: Bàn đạp cho **AI Agent (Ngày 7)**! Agent là thực thể tự trị, nó chỉ cần một Công cụ (Tool) đi lấy tài liệu thô mang về để nó tự suy luận, chứ không muốn hệ thống tự động trả lời thay nó.
+
 ---
 
 ## 📖 4. Từ điển các Hàm & Công cụ Kỹ thuật

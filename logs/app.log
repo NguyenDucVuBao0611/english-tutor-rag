@@ -363,3 +363,246 @@ Bạn dùng thì Hiện tại hoàn thành trong 2 trường hợp chính sau:
 [2026-09-26 00:18:43] [INFO] [test_rag_service.py:123] - ✅ Bài test 3: Giao diện retrieve_context đã sẵn sàng để Ngày 7 bọc thành Agent Tool!
 [2026-09-26 00:18:43] [INFO] [test_rag_service.py:127] - 
 🎉 TOÀN BỘ CÁC BÀI KIỂM THỬ RAG ENGINE NGÀY 6 ĐÃ VƯỢT QUA XUẤT SẮC!
+[2026-09-28 00:47:19] [INFO] [test_tutor_agent.py:67] - =====================================================================
+[2026-09-28 00:47:19] [INFO] [test_tutor_agent.py:68] - 🚀 BẮT ĐẦU KIỂM THỬ AUTONOMOUS REACT TUTOR AGENT (NGÀY 7 - MILESTONE 1)
+[2026-09-28 00:47:19] [INFO] [test_tutor_agent.py:69] - =====================================================================
+[2026-09-28 00:47:19] [INFO] [embedding_service.py:32] - Khởi tạo thành công Gemini Client Singleton cho EmbeddingService.
+[2026-09-28 00:47:19] [INFO] [chroma_store.py:42] - Đang kết nối ChromaDB PersistentClient tại đường dẫn: 'C:\Users\Nguyen Duc Vu Bao\Desktop\RAG\test_agent_chroma_db'...
+[2026-09-28 00:47:19] [INFO] [chroma_store.py:55] - Khởi tạo thành công Collection 'agent_test_knowledge' (Hiện có: 0 bản ghi).
+[2026-09-28 00:47:19] [WARNING] [chroma_store.py:177] - Đang xóa toàn bộ dữ liệu trong Collection 'agent_test_knowledge'...
+[2026-09-28 00:47:19] [INFO] [chroma_store.py:184] - Đã reset thành công Collection 'agent_test_knowledge'.
+[2026-09-28 00:47:19] [INFO] [chroma_store.py:87] - Đang tạo vector embedding cho 2 chunks...
+[2026-09-28 00:47:19] [INFO] [embedding_service.py:74] - Bắt đầu tạo embedding cho lô 2 văn bản...
+[2026-09-28 00:47:20] [INFO] [embedding_service.py:81] - Hoàn thành tạo embedding cho 2 văn bản.
+[2026-09-28 00:47:20] [INFO] [chroma_store.py:90] - Đang lưu 2 bản ghi vào Collection 'agent_test_knowledge'...
+[2026-09-28 00:47:20] [INFO] [chroma_store.py:98] - Đã lưu thành công 2 chunks vào ChromaDB.
+[2026-09-28 00:47:20] [INFO] [llm_service.py:33] - Khởi tạo thành công Gemini Client Singleton cho LLMService.
+[2026-09-28 00:47:20] [INFO] [rag_service.py:45] - Khởi tạo thành công RAGService Facade.
+[2026-09-28 00:47:20] [INFO] [tutor_agent.py:66] - Khởi tạo thành công TutorAgent với 1 công cụ: ['search_grammar_knowledge']
+[2026-09-28 00:47:20] [INFO] [test_tutor_agent.py:76] - 
+--- BÀI TEST 1: KIỂM CHỨNG PHÂN LUỒNG Ý ĐỊNH (CHÀO HỎI KHÔNG TRA SÁCH) ---
+[2026-09-28 00:47:20] [INFO] [test_tutor_agent.py:78] - Học viên: 'Hello teacher! How are you doing today?'
+[2026-09-28 00:47:20] [INFO] [tutor_agent.py:93] - 
+=======================================================
+[2026-09-28 00:47:20] [INFO] [tutor_agent.py:94] - 🤖 [TUTOR AGENT] TIẾP NHẬN YÊU CẦU: 'Hello teacher! How are you doing today?'
+[2026-09-28 00:47:20] [INFO] [tutor_agent.py:95] - =======================================================
+[2026-09-28 00:47:20] [INFO] [tutor_agent.py:105] - --- Vòng lặp suy luận 1/4 ---
+[2026-09-28 00:47:20] [INFO] [llm_service.py:70] - Đang gửi prompt tới Gemini LLM (Model: 'gemini-3.8-flash', Temp: 0.1)...
+[2026-09-28 00:47:31] [INFO] [tutor_agent.py:114] - [Agent Raw Output]:
+Thought: Đây là câu giao tiếp xã giao thông thường, không cần tra cứu giáo trình.
+Final Answer: Hello! I'm doing great, thank you for asking! How are you today? Ready to learn some English? (Chào bạn! Thầy rất khỏe, cảm ơn bạn nhé. Hôm nay bạn thế nào? Đã sẵn sàng học tiếng Anh cùng thầy chưa nào?)
+[2026-09-28 00:47:31] [INFO] [tutor_agent.py:123] - ✅ Agent đã đưa ra câu trả lời cuối cùng tại bước 1.
+[2026-09-28 00:47:31] [INFO] [test_tutor_agent.py:82] - 
+🤖 [AGENT TRẢ LỜI]:
+Hello! I'm doing great, thank you for asking! How are you today? Ready to learn some English? (Chào bạn! Thầy rất khỏe, cảm ơn bạn nhé. Hôm nay bạn thế nào? Đã sẵn sàng học tiếng Anh cùng thầy chưa nào?)
+[2026-09-28 00:47:31] [INFO] [test_tutor_agent.py:83] - Các công cụ đã gọi: []
+[2026-09-28 00:47:31] [INFO] [test_tutor_agent.py:89] - ✅ Bài test 1: Intent Routing thông minh, nhận diện câu chào và phản hồi tự nhiên không gọi tool thừa!
+[2026-09-28 00:47:31] [INFO] [test_tutor_agent.py:94] - 
+--- BÀI TEST 2: CÂU HỎI NGỮ PHÁP (TỰ ĐỘNG KÍCH HOẠT TOOL VÀ TRA SÁCH) ---
+[2026-09-28 00:47:31] [INFO] [test_tutor_agent.py:96] - Học viên: 'Thầy ơi giải thích giúp em cấu trúc câu Bị động (Passive voice) và cho ví dụ trong sách nhé!'
+[2026-09-28 00:47:31] [INFO] [tutor_agent.py:93] - 
+=======================================================
+[2026-09-28 00:47:31] [INFO] [tutor_agent.py:94] - 🤖 [TUTOR AGENT] TIẾP NHẬN YÊU CẦU: 'Thầy ơi giải thích giúp em cấu trúc câu Bị động (Passive voice) và cho ví dụ trong sách nhé!'
+[2026-09-28 00:47:31] [INFO] [tutor_agent.py:95] - =======================================================
+[2026-09-28 00:47:31] [INFO] [tutor_agent.py:105] - --- Vòng lặp suy luận 1/4 ---
+[2026-09-28 00:47:31] [INFO] [llm_service.py:70] - Đang gửi prompt tới Gemini LLM (Model: 'gemini-3.8-flash', Temp: 0.1)...
+[2026-09-28 00:47:33] [INFO] [tutor_agent.py:114] - [Agent Raw Output]:
+Thought: Học viên đang hỏi về lý thuyết và cấu trúc của câu Bị động (Passive Voice) cũng như yêu cầu ví dụ từ sách. Tôi cần tra cứu kiến thức ngữ pháp chuẩn về câu bị động từ giáo trình.
+Action: search_grammar_knowledge
+Action Input: {"query": "passive voice structure and examples", "top_k": 3}
+[2026-09-28 00:47:33] [INFO] [tutor_agent.py:154] - ⚡ [Agent Quyết Định Gọi Tool]: 'search_grammar_knowledge' với tham số: {'query': 'passive voice structure and examples', 'top_k': 3}
+[2026-09-28 00:47:33] [INFO] [rag_tool.py:39] - [Tool: search_grammar_knowledge] Đang tra cứu giáo trình cho query: 'passive voice structure and examples' (top_k=3)
+[2026-09-28 00:47:33] [INFO] [rag_service.py:65] - RAGService đang truy xuất ngữ cảnh cho câu hỏi: 'passive voice structure and examples...'
+[2026-09-28 00:47:33] [INFO] [chroma_store.py:124] - Đang tạo vector cho câu hỏi truy vấn: 'passive voice structure and examples...'
+[2026-09-28 00:47:34] [INFO] [chroma_store.py:127] - Đang tìm kiếm Top-3 trong ChromaDB (Lọc điều kiện: None)...
+[2026-09-28 00:47:34] [INFO] [chroma_store.py:160] - Tìm thấy 2 kết quả tương đồng phù hợp.
+[2026-09-28 00:47:34] [INFO] [rag_tool.py:70] - [Tool: search_grammar_knowledge] Đã tìm thấy 2 đoạn trích từ giáo trình.
+[2026-09-28 00:47:34] [INFO] [tutor_agent.py:166] - 👁️ [Observation từ Tool]:
+[Trích đoạn 1 | Sách: Oxford Practice Grammar, Unit 21 - Trang 42]
+The passive voice is formed with subject + appropriate form of 'be' + past particip...
+[2026-09-28 00:47:34] [INFO] [tutor_agent.py:105] - --- Vòng lặp suy luận 2/4 ---
+[2026-09-28 00:47:34] [INFO] [llm_service.py:70] - Đang gửi prompt tới Gemini LLM (Model: 'gemini-3.8-flash', Temp: 0.1)...
+[2026-09-28 00:47:42] [INFO] [tutor_agent.py:114] - [Agent Raw Output]:
+Thought: Tôi đã có đủ thông tin từ giáo trình để giảng giải cho học viên về cấu trúc và cách dùng của câu Bị động (Passive Voice).
+
+Final Answer: Chào em, thầy sẽ giải thích chi tiết về cấu trúc câu Bị động (Passive Voice) dựa trên giáo trình nhé!
+
+### 1. Khi nào dùng câu Bị động?
+Chúng ta dùng câu bị động khi **hành động quan trọng hơn người/vật thực hiện hành động đó**, hoặc khi chúng ta không biết/không cần thiết phải nhắc đến chủ thể thực hiện hành động.
+
+### 2. Cấu trúc chung của câu Bị động:
+$$\text{Subject (Chủ ngữ)} + \text{to be (chia theo thì)} + \text{Past Participle (V3/V-ed)} + (\text{by} + \text{Agent})$$
+
+*Trong đó:*
+- **Subject**: Đối tượng tiếp nhận hành động (trở thành chủ ngữ mới).
+- **be**: Động từ *to be* được chia theo thì của câu gốc (ví dụ: *is/am/are, was/were, has been...*).
+- **Past Participle (V3/V-ed)**: Phân từ hai của động từ chính.
+- **by + Agent**: Dùng khi muốn nói rõ ai hoặc cái gì đã gây ra hành động (có thể lược bỏ nếu không quan trọng).
+
+### 3. Ví dụ trong giáo trình:
+- **Câu bị động:** *"The new bridge was built in 2020 by the workers."*  
+  *(Cây cầu mới được xây dựng vào năm 2020 bởi các công nhân.)*  
+  $\rightarrow$ Trong câu này, **was built** là dạng bị động ở quá khứ đơn (*was* + *built* ở dạng V3).
+
+---
+📚 **Nguồn tham khảo:** Oxford Practice Grammar, Unit 21 - Trang 42
+[2026-09-28 00:47:42] [INFO] [tutor_agent.py:123] - ✅ Agent đã đưa ra câu trả lời cuối cùng tại bước 2.
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:100] - 
+🤖 [AGENT GIẢNG DẠY]:
+Chào em, thầy sẽ giải thích chi tiết về cấu trúc câu Bị động (Passive Voice) dựa trên giáo trình nhé!
+
+### 1. Khi nào dùng câu Bị động?
+Chúng ta dùng câu bị động khi **hành động quan trọng hơn người/vật thực hiện hành động đó**, hoặc khi chúng ta không biết/không cần thiết phải nhắc đến chủ thể thực hiện hành động.
+
+### 2. Cấu trúc chung của câu Bị động:
+$$\text{Subject (Chủ ngữ)} + \text{to be (chia theo thì)} + \text{Past Participle (V3/V-ed)} + (\text{by} + \text{Agent})$$
+
+*Trong đó:*
+- **Subject**: Đối tượng tiếp nhận hành động (trở thành chủ ngữ mới).
+- **be**: Động từ *to be* được chia theo thì của câu gốc (ví dụ: *is/am/are, was/were, has been...*).
+- **Past Participle (V3/V-ed)**: Phân từ hai của động từ chính.
+- **by + Agent**: Dùng khi muốn nói rõ ai hoặc cái gì đã gây ra hành động (có thể lược bỏ nếu không quan trọng).
+
+### 3. Ví dụ trong giáo trình:
+- **Câu bị động:** *"The new bridge was built in 2020 by the workers."*  
+  *(Cây cầu mới được xây dựng vào năm 2020 bởi các công nhân.)*  
+  $\rightarrow$ Trong câu này, **was built** là dạng bị động ở quá khứ đơn (*was* + *built* ở dạng V3).
+
+---
+📚 **Nguồn tham khảo:** Oxford Practice Grammar, Unit 21 - Trang 42
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:101] - Nhật ký suy luận (Trajectory):
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:103] -   Bước 1: Thought = Học viên đang hỏi về lý thuyết và cấu trúc của câu Bị động (Passive Voice) cũng ...
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:105] -          Action = search_grammar_knowledge | Input = {'query': 'passive voice structure and examples', 'top_k': 3}
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:103] -   Bước 2: Thought = Tôi đã có đủ thông tin từ giáo trình để giảng giải cho học viên về cấu trúc và c...
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:107] - Nguồn sách đã trích dẫn: [{'book_title': 'Oxford Practice Grammar', 'page_number': 42, 'unit': 21, 'score': 0.6955}, {'book_title': 'English Grammar in Use', 'page_number': 14, 'unit': 7, 'score': 0.5862}]
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:114] - ✅ Bài test 2: Chu trình ReAct (Thought -> Action -> Observation -> Final Answer) hoàn hảo 100%!
+[2026-09-28 00:47:42] [INFO] [test_tutor_agent.py:118] - 
+🎉 CHÚC MỪNG BẠN! TOÀN BỘ BÀI TEST AGENT ĐÃ PASS - HOÀN THÀNH MILESTONE 1!
+[2026-09-28 00:51:25] [INFO] [test_tutor_agent.py:67] - =====================================================================
+[2026-09-28 00:51:25] [INFO] [test_tutor_agent.py:68] - 🚀 BẮT ĐẦU KIỂM THỬ AUTONOMOUS REACT TUTOR AGENT (NGÀY 7 - MILESTONE 1)
+[2026-09-28 00:51:25] [INFO] [test_tutor_agent.py:69] - =====================================================================
+[2026-09-28 00:51:25] [INFO] [embedding_service.py:32] - Khởi tạo thành công Gemini Client Singleton cho EmbeddingService.
+[2026-09-28 00:51:25] [INFO] [chroma_store.py:42] - Đang kết nối ChromaDB PersistentClient tại đường dẫn: 'C:\Users\Nguyen Duc Vu Bao\Desktop\RAG\test_agent_chroma_db'...
+[2026-09-28 00:51:25] [INFO] [chroma_store.py:55] - Khởi tạo thành công Collection 'agent_test_knowledge' (Hiện có: 0 bản ghi).
+[2026-09-28 00:51:25] [WARNING] [chroma_store.py:177] - Đang xóa toàn bộ dữ liệu trong Collection 'agent_test_knowledge'...
+[2026-09-28 00:51:25] [INFO] [chroma_store.py:184] - Đã reset thành công Collection 'agent_test_knowledge'.
+[2026-09-28 00:51:25] [INFO] [chroma_store.py:87] - Đang tạo vector embedding cho 2 chunks...
+[2026-09-28 00:51:25] [INFO] [embedding_service.py:74] - Bắt đầu tạo embedding cho lô 2 văn bản...
+[2026-09-28 00:51:26] [INFO] [embedding_service.py:81] - Hoàn thành tạo embedding cho 2 văn bản.
+[2026-09-28 00:51:26] [INFO] [chroma_store.py:90] - Đang lưu 2 bản ghi vào Collection 'agent_test_knowledge'...
+[2026-09-28 00:51:26] [INFO] [chroma_store.py:98] - Đã lưu thành công 2 chunks vào ChromaDB.
+[2026-09-28 00:51:26] [INFO] [llm_service.py:33] - Khởi tạo thành công Gemini Client Singleton cho LLMService.
+[2026-09-28 00:51:26] [INFO] [rag_service.py:45] - Khởi tạo thành công RAGService Facade.
+[2026-09-28 00:51:26] [INFO] [tutor_agent.py:66] - Khởi tạo thành công TutorAgent với 1 công cụ: ['search_grammar_knowledge']
+[2026-09-28 00:51:26] [INFO] [test_tutor_agent.py:76] - 
+--- BÀI TEST 1: KIỂM CHỨNG PHÂN LUỒNG Ý ĐỊNH (CHÀO HỎI KHÔNG TRA SÁCH) ---
+[2026-09-28 00:51:26] [INFO] [test_tutor_agent.py:78] - Học viên: 'Hello teacher! How are you doing today?'
+[2026-09-28 00:51:26] [INFO] [tutor_agent.py:93] - 
+=======================================================
+[2026-09-28 00:51:26] [INFO] [tutor_agent.py:94] - 🤖 [TUTOR AGENT] TIẾP NHẬN YÊU CẦU: 'Hello teacher! How are you doing today?'
+[2026-09-28 00:51:26] [INFO] [tutor_agent.py:95] - =======================================================
+[2026-09-28 00:51:26] [INFO] [tutor_agent.py:105] - --- Vòng lặp suy luận 1/4 ---
+[2026-09-28 00:51:26] [INFO] [llm_service.py:70] - Đang gửi prompt tới Gemini LLM (Model: 'gemini-3.8-flash', Temp: 0.1)...
+[2026-09-28 00:51:54] [INFO] [tutor_agent.py:114] - [Agent Raw Output]:
+Thought: Đây là câu giao tiếp xã giao thông thường, không cần tra cứu giáo trình.
+Final Answer: Hello! I'm doing great, thank you for asking! How are you today? Are you ready to learn some English with me? 
+
+(Chào bạn! Mình rất khỏe, cảm ơn bạn đã hỏi thăm nhé! Hôm nay của bạn thế nào? Bạn đã sẵn sàng học tiếng Anh cùng mình chưa?)
+[2026-09-28 00:51:54] [INFO] [tutor_agent.py:123] - ✅ Agent đã đưa ra câu trả lời cuối cùng tại bước 1.
+[2026-09-28 00:51:54] [INFO] [test_tutor_agent.py:82] - 
+🤖 [AGENT TRẢ LỜI]:
+Hello! I'm doing great, thank you for asking! How are you today? Are you ready to learn some English with me? 
+
+(Chào bạn! Mình rất khỏe, cảm ơn bạn đã hỏi thăm nhé! Hôm nay của bạn thế nào? Bạn đã sẵn sàng học tiếng Anh cùng mình chưa?)
+[2026-09-28 00:51:54] [INFO] [test_tutor_agent.py:83] - Các công cụ đã gọi: []
+[2026-09-28 00:51:54] [INFO] [test_tutor_agent.py:89] - ✅ Bài test 1: Intent Routing thông minh, nhận diện câu chào và phản hồi tự nhiên không gọi tool thừa!
+[2026-09-28 00:51:54] [INFO] [test_tutor_agent.py:94] - 
+--- BÀI TEST 2: CÂU HỎI NGỮ PHÁP (TỰ ĐỘNG KÍCH HOẠT TOOL VÀ TRA SÁCH) ---
+[2026-09-28 00:51:54] [INFO] [test_tutor_agent.py:96] - Học viên: 'Thầy ơi giải thích giúp em cấu trúc câu Bị động (Passive voice) và cho ví dụ trong sách nhé!'
+[2026-09-28 00:51:54] [INFO] [tutor_agent.py:93] - 
+=======================================================
+[2026-09-28 00:51:54] [INFO] [tutor_agent.py:94] - 🤖 [TUTOR AGENT] TIẾP NHẬN YÊU CẦU: 'Thầy ơi giải thích giúp em cấu trúc câu Bị động (Passive voice) và cho ví dụ trong sách nhé!'
+[2026-09-28 00:51:54] [INFO] [tutor_agent.py:95] - =======================================================
+[2026-09-28 00:51:54] [INFO] [tutor_agent.py:105] - --- Vòng lặp suy luận 1/4 ---
+[2026-09-28 00:51:54] [INFO] [llm_service.py:70] - Đang gửi prompt tới Gemini LLM (Model: 'gemini-3.8-flash', Temp: 0.1)...
+[2026-09-28 00:51:58] [WARNING] [llm_service.py:81] - Lỗi khi gọi model 'gemini-3.8-flash': 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}. Thử fallback sang 'gemini-3.6-flash'...
+[2026-09-28 00:52:00] [INFO] [tutor_agent.py:114] - [Agent Raw Output]:
+Thought: Học viên đang yêu cầu giải thích về cấu trúc câu Bị động (Passive Voice) và ví dụ từ giáo trình. Tôi cần sử dụng công cụ search_grammar_knowledge để tra cứu tài liệu ngữ pháp chính thống về chủ đề này.
+Action: search_grammar_knowledge
+Action Input: {"query": "passive voice", "top_k": 3}
+[2026-09-28 00:52:00] [INFO] [tutor_agent.py:154] - ⚡ [Agent Quyết Định Gọi Tool]: 'search_grammar_knowledge' với tham số: {'query': 'passive voice', 'top_k': 3}
+[2026-09-28 00:52:00] [INFO] [rag_tool.py:39] - [Tool: search_grammar_knowledge] Đang tra cứu giáo trình cho query: 'passive voice' (top_k=3)
+[2026-09-28 00:52:00] [INFO] [rag_service.py:65] - RAGService đang truy xuất ngữ cảnh cho câu hỏi: 'passive voice...'
+[2026-09-28 00:52:00] [INFO] [chroma_store.py:124] - Đang tạo vector cho câu hỏi truy vấn: 'passive voice...'
+[2026-09-28 00:52:01] [INFO] [chroma_store.py:127] - Đang tìm kiếm Top-3 trong ChromaDB (Lọc điều kiện: None)...
+[2026-09-28 00:52:01] [INFO] [chroma_store.py:160] - Tìm thấy 2 kết quả tương đồng phù hợp.
+[2026-09-28 00:52:01] [INFO] [rag_tool.py:70] - [Tool: search_grammar_knowledge] Đã tìm thấy 2 đoạn trích từ giáo trình.
+[2026-09-28 00:52:01] [INFO] [tutor_agent.py:166] - 👁️ [Observation từ Tool]:
+[Trích đoạn 1 | Sách: Oxford Practice Grammar, Unit 21 - Trang 42]
+The passive voice is formed with subject + appropriate form of 'be' + past particip...
+[2026-09-28 00:52:01] [INFO] [tutor_agent.py:105] - --- Vòng lặp suy luận 2/4 ---
+[2026-09-28 00:52:01] [INFO] [llm_service.py:70] - Đang gửi prompt tới Gemini LLM (Model: 'gemini-3.8-flash', Temp: 0.1)...
+[2026-09-28 00:52:02] [WARNING] [llm_service.py:81] - Lỗi khi gọi model 'gemini-3.8-flash': 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}. Thử fallback sang 'gemini-3.6-flash'...
+[2026-09-28 00:52:06] [INFO] [tutor_agent.py:114] - [Agent Raw Output]:
+Thought: Tôi đã có đủ thông tin từ giáo trình để giảng giải cho học viên về cấu trúc câu Bị động (Passive Voice).
+
+Final Answer:
+Chào em! Thầy sẽ giải thích cho em về **Câu bị động (Passive Voice)** một cách dễ hiểu nhất nhé:
+
+### 1. Khái niệm & Cách dùng
+Chúng ta sử dụng câu bị động khi **hành động quan trọng hơn người/vật thực hiện hành động đó** (hoặc khi chúng ta không biết/không muốn đề cập đến người thực hiện).
+
+### 2. Cấu trúc chung
+$$\text{Chủ ngữ (Subject)} + \text{Thì phù hợp của động từ 'be'} + \text{Động từ cột 3 / Thêm -ed (Past Participle - V3)}$$
+
+*(Nếu muốn nêu rõ người/vật thực hiện hành động, em thêm `by + tân ngữ` ở cuối câu).*
+
+### 3. Ví dụ từ sách giáo trình:
+- **Active (Chủ động):** *The workers built the new bridge in 2020.* (Những người công nhân đã xây cây cầu mới vào năm 2020.)
+- **Passive (Bị động):** *"The new bridge was built in 2020 by the workers."* (Cây cầu mới đã được xây dựng vào năm 2020 bởi những người công nhân.)
+
+In example này:
+- Chủ ngữ mới: `The new bridge`
+- Động từ 'be' ở thì quá khứ đơn: `was`
+- Động từ V3: `built`
+- Tác nhân: `by the workers`
+
+---
+📚 **Nguồn tham khảo:** Oxford Practice Grammar, Unit 21 - Trang 42
+
+Em đã nắm rõ phần này chưa? Nếu cần luyện tập thêm bài tập về câu bị động, em cứ nói thầy nhé!
+[2026-09-28 00:52:06] [INFO] [tutor_agent.py:123] - ✅ Agent đã đưa ra câu trả lời cuối cùng tại bước 2.
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:100] - 
+🤖 [AGENT GIẢNG DẠY]:
+Chào em! Thầy sẽ giải thích cho em về **Câu bị động (Passive Voice)** một cách dễ hiểu nhất nhé:
+
+### 1. Khái niệm & Cách dùng
+Chúng ta sử dụng câu bị động khi **hành động quan trọng hơn người/vật thực hiện hành động đó** (hoặc khi chúng ta không biết/không muốn đề cập đến người thực hiện).
+
+### 2. Cấu trúc chung
+$$\text{Chủ ngữ (Subject)} + \text{Thì phù hợp của động từ 'be'} + \text{Động từ cột 3 / Thêm -ed (Past Participle - V3)}$$
+
+*(Nếu muốn nêu rõ người/vật thực hiện hành động, em thêm `by + tân ngữ` ở cuối câu).*
+
+### 3. Ví dụ từ sách giáo trình:
+- **Active (Chủ động):** *The workers built the new bridge in 2020.* (Những người công nhân đã xây cây cầu mới vào năm 2020.)
+- **Passive (Bị động):** *"The new bridge was built in 2020 by the workers."* (Cây cầu mới đã được xây dựng vào năm 2020 bởi những người công nhân.)
+
+In example này:
+- Chủ ngữ mới: `The new bridge`
+- Động từ 'be' ở thì quá khứ đơn: `was`
+- Động từ V3: `built`
+- Tác nhân: `by the workers`
+
+---
+📚 **Nguồn tham khảo:** Oxford Practice Grammar, Unit 21 - Trang 42
+
+Em đã nắm rõ phần này chưa? Nếu cần luyện tập thêm bài tập về câu bị động, em cứ nói thầy nhé!
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:101] - Nhật ký suy luận (Trajectory):
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:103] -   Bước 1: Thought = Học viên đang yêu cầu giải thích về cấu trúc câu Bị động (Passive Voice) và ví d...
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:105] -          Action = search_grammar_knowledge | Input = {'query': 'passive voice', 'top_k': 3}
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:103] -   Bước 2: Thought = Tôi đã có đủ thông tin từ giáo trình để giảng giải cho học viên về cấu trúc câu ...
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:107] - Nguồn sách đã trích dẫn: [{'book_title': 'Oxford Practice Grammar', 'page_number': 42, 'unit': 21, 'score': 0.6928}, {'book_title': 'English Grammar in Use', 'page_number': 14, 'unit': 7, 'score': 0.5432}]
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:114] - ✅ Bài test 2: Chu trình ReAct (Thought -> Action -> Observation -> Final Answer) hoàn hảo 100%!
+[2026-09-28 00:52:06] [INFO] [test_tutor_agent.py:118] - 
+🎉 CHÚC MỪNG BẠN! TOÀN BỘ BÀI TEST AGENT ĐÃ PASS - HOÀN THÀNH MILESTONE 1!

@@ -129,7 +129,7 @@ flowchart TD
 - **Output**: Giao diện Web chạy tại `http://localhost:8501`.
 
 #### **Ngày 13: Đánh giá Chất lượng Agent & RAG (RAG Triad + Tool Accuracy)**
-- **Lý thuyết**: Bộ 3 tiêu chí RAG Triad (Context Relevance, Groundedness, Answer Relevance) kết hợp đánh giá độ chính xác khi chọn Tool của Agent (Tool Selection Accuracy).
+- **Lý thuyết**: Bộ 3 tiêu chí RAG Triad (Context Relevance, Groundedness, Answer Relevance) kết hợp đánh giá độ chính xác khi chọn Tool của Agent (Tool Selection Accuracy). Xem cẩm nang chi tiết tại [`docs/RAG_EVALUATION_GUIDE.md`](file:///c:/Users/Nguyen%20Duc%20Vu%20Bao/Desktop/RAG/docs/RAG_EVALUATION_GUIDE.md).
 - **Nhiệm vụ**: Chạy bộ benchmark 10 câu hỏi thực tế, đánh giá điểm số và tối ưu prompt/retrieval.
 - **Output**: Báo cáo đánh giá chất lượng `docs/evaluation_report.md`.
 

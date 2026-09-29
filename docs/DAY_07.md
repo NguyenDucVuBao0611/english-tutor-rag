@@ -8,6 +8,7 @@
 ## 📑 MỤC LỤC
 1. [Bước Nhảy Vọt: Từ Static RAG Đến Autonomous Agentic RAG](#1-bước-nhảy-vọt-từ-static-rag-đến-autonomous-agentic-rag)
 2. [Giải Phẫu Mô Hình ReAct (Reasoning + Acting Loop)](#2-giải-phẫu-mô-hình-react-reasoning--acting-loop)
+   - [2.1. Góc Chuyên Sâu: Cơ Chế LLM "Hiểu" Câu Hỏi & Phản Xạ Kích Hoạt Tool](#21-góc-chuyên-sâu-cơ-chế-llm-hiểu-câu-hỏi--phản-xạ-kích-hoạt-tool)
 3. [Giải Phẫu Chi Tiết Mã Nguồn Ngày 7](#3-giải-phẫu-chi-tiết-mã-nguồn-ngày-7)
    - [3.1. Hợp đồng Công cụ chuẩn Type-Safe: `BaseTool`](#31-hợp-đồng-công-cụ-chuẩn-type-safe-basetool)
    - [3.2. Đóng gói RAG thành Tool: `GrammarRetrievalTool`](#32-đóng-gói-rag-thành-tool-grammarretrievaltool)
@@ -55,6 +56,37 @@ flowchart TD
     
     FA --> Output["Trả về màn hình cho học viên"]
 ```
+
+### 2.1. Góc Chuyên Sâu: Cơ Chế LLM "Hiểu" Câu Hỏi & Phản Xạ Kích Hoạt Tool
+
+Nhiều lập trình viên lầm tưởng rằng hệ thống dùng các câu lệnh `if...else` hay biểu thức chính quy (Regex) để bắt từ khóa. Thực tế, Agent "hiểu" và "chọn công cụ" hoàn toàn tự động thông qua **3 giai đoạn tiến hóa của LLM**:
+
+```mermaid
+flowchart LR
+    G1["1. PRE-TRAINING\n(Hàng ngàn tỷ token văn bản)\nHiểu ngữ nghĩa từ vựng\nHiểu kiến thức nhân loại"]
+    --> G2["2. INSTRUCTION TUNING\n(Hàng trăm ngàn cặp đối thoại)\nHọc phân loại ý định\nBiết nghe lời & làm theo chỉ thị"]
+    --> G3["3. TOOL-USE TRAINING\n(Hàng triệu mẫu Schema + JSON)\nTạo phản xạ có điều kiện:\nKhớp 'description' ➔ Sinh Action JSON"]
+```
+
+#### 1. Giai đoạn 1: Pre-training (Tiền huấn luyện) — *Xây dựng Kho Tri Thức Ngữ Nghĩa*
+- Mô hình (Gemini) được nạp hàng ngàn tỷ từ (sách báo, Wikipedia, mã nguồn, bài nghiên cứu).
+- Nó học cách ánh xạ các từ vào **Không gian Vector đa chiều (Semantic Space)**:
+  - Cụm từ *"câu bị động"* nằm rất gần với *"ngữ pháp"*, *"passive voice"*, *"past participle"*, *"thì tiếng Anh"*.
+  - Còn cụm từ *"hello"*, *"chào thầy"* nằm ở cụm *"giao tiếp xã giao"*, *"greeting"*.
+- *Kết quả*: LLM hiểu bản chất ngữ nghĩa của câu hỏi mà không cần phải khớp từ khóa chính xác.
+
+#### 2. Giai đoạn 2: Instruction Fine-Tuning — *Học Nhận Diện Ý Định (Intent Classification)*
+- Huấn luyện mô hình với các cặp mẫu có chủ đích:
+  - Nếu câu là câu chào $\rightarrow$ Đáp lại tự nhiên, không phức tạp hóa vấn đề.
+  - Nếu câu là thắc mắc học tập $\rightarrow$ Phân tích có hệ thống và giải thích sư phạm.
+- *Kết quả*: LLM phân biệt rạch ròi giữa **Ý định xã giao (Chitchat)** và **Ý định truy vấn kiến thức (Knowledge Query)**.
+
+#### 3. Giai đoạn 3: Tool-Use / Function Calling Training — *Hình Thành Phản Xạ Kích Hoạt Tool*
+- Google và OpenAI huấn luyện chuyên biệt hàng triệu tình huống: cung cấp cho LLM một danh sách công cụ (kèm `name`, `description`, `parameters`) và yêu cầu nó:
+  > *"Nếu câu hỏi của người dùng phù hợp với mô tả `description` của một Tool, bạn KHÔNG ĐƯỢC trả lời ngay, mà BẮT BUỘC phải xuất ra cú pháp `Action: [tool_name]` và `Action Input: {json}`"*.
+- *Kết quả*: Khi chúng ta truyền `description` trong [`src/tools/base.py`](file:///c:/Users/Nguyen%20Duc%20Vu%20Bao/Desktop/RAG/src/tools/base.py):
+  > *"Tra cứu giáo trình ngữ pháp tiếng Anh chính thống (Oxford, Cambridge)..."*
+  LLM sẽ lập tức phát sinh **phản xạ có điều kiện (Conditioned Reflex)**: nó ngừng sinh text tự do, tự trích xuất tham số `{"query": "passive voice", "top_k": 3}`, và giao quyền điều khiển lại cho Python thực thi!
 
 ---
 

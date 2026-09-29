@@ -16,6 +16,7 @@ chroma_data/
 test_chroma_db/
 test_rag_chroma_db/
 test_agent_chroma_db/
+test_api_chroma_db/
 *.chroma
 
 # IDE & OS Files
